@@ -1,16 +1,51 @@
-# React + Vite
+# Tic Tac Toe (React + Vite)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern Tic Tac Toe game built with React and Vite. Play against a smart CPU opponent with attractive UI and responsive design.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **User vs CPU gameplay** (You are X, CPU is O)
+- **User vs User gameplay** (You are X, Player 2 is O) - Upcoming
+- **Smart CPU AI**: Tries to win, blocks your moves, and sometimes makes mistakes for a fun challenge
+- **Win, draw, and reset detection**
+- **Responsive design** for desktop and mobile
+- **Modern CSS styling**
+- **Fast development experience** with Vite
 
-## React Compiler
+## Getting Started
 
-The React Compiler is currently not compatible with SWC. See [this issue](https://github.com/vitejs/vite-plugin-react/issues/428) for tracking the progress.
+### Install dependencies
+```bash
+npm install
+```
 
-## Expanding the ESLint configuration
+### Start the development server
+```bash
+npm run dev
+```
+Open [http://localhost:5173/](http://localhost:5173/) in your browser to play.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Gameplay
+- Click on any empty cell to make your move.
+- The CPU will respond after a short delay.
+- The game announces win, draw, or loss and allows you to start a new game.
+
+## Project Structure
+```
+├── public/
+├── src/
+│   ├── App.jsx        # Main game logic and UI
+│   ├── App.css        # Game styling
+│   └── ...            # Other assets and files
+├── index.html
+├── package.json
+├── vite.config.js
+└── README.md
+```
+
+## Customization
+- You can tweak the AI difficulty in `App.jsx` by adjusting the randomness and strategy logic.
+- Style the game further in `App.css`.
+
+---
+Built with ❤️ using React and Vite.
