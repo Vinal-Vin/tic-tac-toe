@@ -1,0 +1,139 @@
+#root {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+}
+
+h1 {
+  font-size: 3rem;
+  margin: 0;
+  color: #333;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.game-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.status {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin: 0;
+  color: #2c3e50;
+  min-height: 2rem;
+}
+
+.players {
+  font-size: 1.1rem;
+  margin: 0;
+  color: #7f8c8d;
+}
+
+.game-board {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 4px;
+  background-color: #34495e;
+  padding: 4px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.cell {
+  width: 100px;
+  height: 100px;
+  background-color: #ecf0f1;
+  border: none;
+  font-size: 2.5rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+}
+
+.cell:hover:not(:disabled) {
+  background-color: #d5dbdb;
+  transform: scale(1.05);
+}
+
+.cell:disabled {
+  cursor: not-allowed;
+}
+
+.cell.filled {
+  background-color: #bdc3c7;
+}
+
+.cell.filled:hover {
+  transform: none;
+}
+
+/* X styling (User) */
+.cell.x-mark {
+  color: #e74c3c;
+  text-shadow: 2px 2px 4px rgba(231, 76, 60, 0.3);
+}
+
+/* O styling (CPU) */
+.cell.o-mark {
+  color: #3498db;
+  text-shadow: 2px 2px 4px rgba(52, 152, 219, 0.3);
+}
+
+.reset-button {
+  padding: 12px 24px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  background: linear-gradient(135deg, #3498db, #2c3e50);
+  color: white;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.reset-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+  background: linear-gradient(135deg, #2980b9, #1a252f);
+}
+
+.reset-button:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive design */
+@media (max-width: 600px) {
+  .cell {
+    width: 80px;
+    height: 80px;
+    font-size: 2rem;
+  }
+  
+  h1 {
+    font-size: 2.5rem;
+  }
+  
+  .status {
+    font-size: 1.3rem;
+  }
+}
