@@ -34,7 +34,7 @@ function App() {
     return squares.every(square => square !== null)
   }
 
-  // CPU AI logic
+  // CPU logic
   const getCPUMove = (squares) => {
     // Add some randomness - 20% chance CPU makes a random move (easier difficulty)
     if (Math.random() < 0.2) {
@@ -150,7 +150,7 @@ function App() {
     setWinner(null)
   }
 
-  // Get status message
+  // Get status message and class
   const getStatusMessage = () => {
     switch (gameStatus) {
       case 'userWin':
@@ -164,12 +164,32 @@ function App() {
     }
   }
 
+  const getStatusClass = () => {
+    switch (gameStatus) {
+      case 'userWin':
+        return 'win'
+      case 'cpuWin':
+        return 'lose'
+      case 'draw':
+        return 'draw'
+      default:
+        return ''
+    }
+  }
+
   return (
     <div className="app">
       <h1>Tic Tac Toe</h1>
       <div className="game-info">
-        <p className="status">{getStatusMessage()}</p>
-        <p className="players">You: X | CPU: O</p>
+        <p className={`status ${getStatusClass()}`}>{getStatusMessage()}</p>
+        <div className="players">
+          <span className={`player-indicator ${isUserTurn && gameStatus === 'playing' ? 'active' : ''}`}>
+            🎮 You: X
+          </span>
+          <span className={`player-indicator ${!isUserTurn && gameStatus === 'playing' ? 'active' : ''}`}>
+            🤖 CPU: O
+          </span>
+        </div>
       </div>
       <div className="game-board">
         {board.map((cell, index) => (
